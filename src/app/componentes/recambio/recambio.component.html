@@ -1,0 +1,40 @@
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-12">
+        <div class="card principal">
+          <div class="card-header text-center">
+            <h3 class="titulo">RECAMBIOS</h3>
+            <button class="btn btn-secondary float-end" routerLink="/dashboard/listarReparaciones">Lista Reparaciones</button>
+          </div>
+          <div class="card-body">
+            <table class="table  table-hover">
+              <thead style="color:black">
+                <tr>
+                  <th>ID Pieza</th>
+                  <th>Nombre</th>
+                  <th>Precio(€)</th>
+                  <th>Tipo</th>
+                  <th>Fabricante</th>
+                  <th>Cantidad</th>
+                  <th>ID Escuderia</th>
+
+                  <th> </th>
+  
+                </tr>
+              </thead>
+              <tbody style="color:aliceblue">
+                <tr *ngFor="let recambio of RecambiosObject">
+                  <td>{{recambio.idPieza}}</td>
+                  <td>{{recambio.nombre}}</td>
+                  <td>{{recambio.precio}}</td>
+                  <td>{{recambio.tipo}}</td>
+                  <td>{{recambio.fabricante}}</td>
+                  <td>{{recambio.cantidadTotal}}</td>
+                  <td>{{recambio.idEscuderia}}</td>
+                  
+                  <td>
+                    <i (click)="removeRecambio(recambio.idPieza)" class="fas fa-ban text-danger"></i>
+                  </td>
+                </tr>
+              </tbody>
+            </table>

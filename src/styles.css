@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background: #000000;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.titulo {
+    font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.celda {
+    background-color: #323232;
+    color: greenyellow;
+    box-shadow: black 0px 0px 10px;
+    border-radius: 10px;
+    border-color: #131313;
+  
+  
+  }
+
+
+  

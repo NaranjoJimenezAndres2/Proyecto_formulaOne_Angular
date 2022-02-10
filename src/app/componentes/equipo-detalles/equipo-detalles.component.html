@@ -1,0 +1,47 @@
+<p>equipo-detalles works!</p>
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-12">
+        <div class="card principal">
+          <div class="card-header text-center">
+            <h3 class="titulo">PRESUPUESTO DEL EQUIPO</h3>
+          </div>
+          <div class="card-body">
+            <table class="table  table-hover">
+              <thead style="color:black">
+                <tr>
+                  <th>ID Escuderia</th>
+                  <th>Nombre</th>
+                  <th>Piezas Coste</th>
+                  <th>Sueldo Coste</th>
+                  <th>Presupuesto</th>
+                  <th> </th>
+  
+                </tr>
+              </thead>
+              <tbody style="color:aliceblue">
+                <tr *ngFor="let equipo of equipoDetalleObject">
+                  <td>{{equipo.idEscuderia}}</td>
+                  <td>{{equipo.nombre}}</td>
+                  <td>{{equipo.piezasCoste}}</td>
+                  <td>{{equipo.salarioCoste}}</td>
+                  <td>{{equipo.presupuesto}}</td>
+                  <td>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+            
+
+            <div id="miGrafico01" class='mt-5' style="width: 50% ; margin-left:400px; margin-bottom: 5px" >
+                <highcharts-chart
+                  [Highcharts]="Highcharts"
+                  [options]="chartOptions"
+                  style="width: 100%; height: 300px; display: block;">
+                </highcharts-chart>
+              </div>

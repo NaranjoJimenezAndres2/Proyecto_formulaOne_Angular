@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="col-lg-5 offset-lg-3 margen">
+        <div class="card card2">
+            <div class="card-header text-center fondo">
+                <h3 class="titulo">{{titulo | uppercase}}</h3>
+                <form class="mt-3" [formGroup]="equiposForm" (ngSubmit)="addEquipo()">
+                    <div class="mb-3">
+                        <input type="text" class="form-control celda" id="idEquipo" formControlName="_idEscuderia"
+                            placeholder="ID del Equipo">
+                            <div class="text-danger"
+                                *ngIf="equiposForm.get('_idEscuderia')?.hasError('required') && equiposForm.get('_idEscuderia')?.touched">
+                               <span>El ID del equipo es <b>requerido</b></span> 
+                            </div>
+                            
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control celda" id="nombre" formControlName="_nombre"
+                            placeholder="Nombre del Equipo">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control celda" id="pais" formControlName="_pais"
+                            placeholder="Pais">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control celda" id="motorDistribuidor" formControlName="_motorDistribuidor"
+                            placeholder="Motor">
+                            <div class="text-danger"
+                                *ngIf="equiposForm.get('_motorDistribuidor')?.hasError('required') && equiposForm.get('_motorDistribuidor')?.touched">
+                               <span>El Distribuidor de motor es <b>requerido</b></span> 
+                            </div>
+                    </div>
+                    <div class="mb-3">
+                        <input type="number" class="form-control celda" id="presupuesto" formControlName="_presupuesto"
+                            placeholder="Presupuesto del Equipo">
+                    </div>
+                    <div class="mb-3">
+                    <button type="submit" class="btn btn-success float-end">{{boton}}</button> 
+                    <button routerLink= "/dashboard/equipos" type="submit"  class="btn btn-secondary float-start">Volver</button> 
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+<p>mod-reparacion works!</p>
+<div class="row">
+    <div class="col-lg-6 offset-lg-3">
+        <div class="card card2">
+            <div class="card-header text-center fondo">
+                <h3 class="titulo">Ticket de Reparaciones</h3>
+                <button class="btn btn-secondary float-end" routerLink="/dashboard/listarReparaciones">Lista Reparaciones</button>
+                <form class="mt-3" [formGroup]="reparacionesForm"(ngSubmit)="editarReparacion()" >
+                    <div class="mb-3">
+                        <input type="text" class="form-control celda" id="_idReparacion" formControlName="_idReparacion"
+                            placeholder="ID de la reparacion">
+                            <div class="text-danger"
+                                *ngIf="reparacionesForm.get('_idReparacion')?.hasError('required') && reparacionesForm.get('_idReparacion')?.touched">
+                               <span>El ID del equipo es <b>requerido</b></span> 
+                            </div>
+                            
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control celda" id="_idIngeniero" formControlName="_idIngeniero"
+                            placeholder="ID del ingeniero">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control celda" id="_idPieza" formControlName="_idPieza"
+                            placeholder="ID de la pieza">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control celda" id="_idCoche" formControlName="_idCoche"
+                            placeholder="ID del coche">
+                            <div class="text-danger"
+                                *ngIf="reparacionesForm.get('_idCoche')?.hasError('required') && reparacionesForm.get('_idCoche')?.touched">
+                               <span>El Distribuidor de motor es <b>requerido</b></span> 
+                            </div>
+                    </div>
+                    <div class="mb-3">
+                        <input type="number" class="form-control celda" id="_cantidad" formControlName="_cantidad"
+                            placeholder="Numero de piezas requeridas">
+                    </div>
+                    <div class="form-group">
+                        <select formControlName="_estado" class="form-control celda">
+                            <option value="default" disabled>Seleccione un estado</option>
+                            <option *ngFor="let estado of estados" [ngValue]="estado.estado">{{estado.estado}}</option>
+                          </select>
+                            <div class="text-danger"
+                            *ngIf="reparacionesForm.get('_estado')?.hasError('required') || reparacionesForm.get('_estado')?.touched">Por favor seleccione un estado </div>
+
+                          
+                    </div>
+                    <div class="mb-3">
+                    <button type="submit" class="btn btn-success float-end">Guardar</button> 
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

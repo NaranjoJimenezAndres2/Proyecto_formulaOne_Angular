@@ -1,0 +1,39 @@
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-12">
+        <div class="card principal">
+          <div class="card-header text-center">
+            <h3 class="titulo">REPARACIONES</h3>
+            <button class="btn btn-secondary float-end" routerLink="/reparaciones">+ Reparacion</button>
+            <button class="btn btn-secondary float-start" routerLink="/dashboard/recambios">Recambios</button>
+          </div>
+          <div class="card-body">
+            <table class="table  table-hover">
+              <thead style="color:black">
+                <tr>
+                  <th>ID Reparacion</th>
+                  <th>ID Ingeniero</th>
+                  <th>ID Pieza</th>
+                  <th>ID Coche</th>
+                  <th>Cantidad</th>
+                  <th>Fecha</th>
+                  <th>Estado</th>
+                  <th> </th>
+  
+                </tr>
+              </thead>
+              <tbody  style="color:aliceblue">
+                <tr *ngFor="let reparacion of ReparacionObject">
+                  <td>{{reparacion.idReparacion}}</td>
+                  <td>{{reparacion.idIngeniero}}</td>
+                  <td>{{reparacion.idPieza}}</td>
+                  <td>{{reparacion.idCoche}}</td>
+                  <td>{{reparacion.cantidad}}</td>
+                  <td>{{reparacion.fecha}}</td>
+                  <td>{{reparacion.estado}}</td>
+                  <td>
+                    <i  [routerLink]="['/editarReparacion',reparacion.idReparacion]" class="fas fa-edit"></i>
+                  </td>
+                </tr>
+              </tbody>
+            </table>

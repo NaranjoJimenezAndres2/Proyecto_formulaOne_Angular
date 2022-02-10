@@ -1,0 +1,55 @@
+.fondo {
+    background:
+      linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+      linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+      linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+      linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+      linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+      linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+    background-color: #131313;
+    background-size: 20px 20px;
+  }
+
+  .titulo {
+    color:aliceblue;
+    font-family: 'IBM Plex Sans Thai Looped', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+  }
+
+  input:focus { 
+    outline: none !important;
+    border-color: greenyellow;
+    box-shadow: 0 0 10px greenyellow;
+  }
+  textarea:focus { 
+    outline: none !important;
+    border-color: transparent;
+    box-shadow: 0 0 10px red;
+  }
+
+  .card2 {
+    background-color: #323232;
+    color: #FF1700;
+    box-shadow: black 0px 0px 10px;
+    border-radius: 10px;
+    border-color: #131313;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .margen {
+    margin-top: 50px;
+    margin-left: 400px;
+  
+  }
+
+  .celda {
+    background-color: #323232;
+    color: greenyellow;
+    box-shadow: black 0px 0px 10px;
+    border-radius: 10px;
+    border-color: #131313;
+  
+  
+  }

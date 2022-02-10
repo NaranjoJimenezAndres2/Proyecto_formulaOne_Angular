@@ -1,0 +1,59 @@
+
+<div class="row">
+    <div class="col-lg-6 offset-lg-3 margen">
+        <div class="card card2">
+            <div class="card-header text-center fondo">
+                <h3 class="titulo">Ticket de Reparaciones</h3>
+                <button class="btn btn-secondary float-end" routerLink="/dashboard/listarReparaciones">Lista Reparaciones</button>
+                <form class="mt-3" [formGroup]="reparacionesForm" (ngSubmit)="addReparaciones()">
+                    <div class="mb-3">
+                        <input type="text" class="form-control celda" id="_idReparacion" formControlName="_idReparacion"
+                            placeholder="ID de la reparacion">
+                            <div class="text-danger"
+                                *ngIf="reparacionesForm.get('_idReparacion')?.hasError('required') && reparacionesForm.get('_idReparacion')?.touched">
+                               <span>El ID de la reparacion es <b>requerido</b></span> 
+                            </div>
+                            
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control celda" id="_idIngeniero" formControlName="_idIngeniero"
+                            placeholder="ID del ingeniero">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control celda" id="_idPieza" formControlName="_idPieza"
+                            placeholder="ID de la pieza">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control celda" id="_idCoche" formControlName="_idCoche"
+                            placeholder="ID del coche">
+                            <div class="text-danger"
+                                *ngIf="reparacionesForm.get('_idCoche')?.hasError('required') && reparacionesForm.get('_idCoche')?.touched">
+                               <span>El Distribuidor de motor es <b>requerido</b></span> 
+                            </div>
+                    </div>
+                    <div class="mb-3">
+                        <input type="number" class="form-control celda" id="_cantidad" formControlName="_cantidad"
+                            placeholder="Numero de piezas requeridas">
+                    </div>
+                    <div class="mb-3">
+                        <input type="date" class="form-control celda" id="_fecha" formControlName="_fecha"
+                            placeholder="fecha">
+                    </div>
+                    <div class="mb-3">
+                        <select class="form-control celda" id="exampleFormControlSelect1">
+                            <option disabled selected>Selecciona un estado</option>
+                            <option value="En curso">En curso</option>
+                            <option value="Retrasado" >Retrasado</option>
+                            <option value="Finalizado">Finalizado</option>
+                            <option value="Pendiente">Pendiente</option>
+                          </select>
+                    </div>
+                    <div class="mb-3">
+                    <button type="submit" class="btn btn-success float-end">Guardar</button> 
+                    <button routerLink= "/dashboard"  class="btn btn-secondary float-start">Volver</button> 
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
