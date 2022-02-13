@@ -33,6 +33,7 @@
                   <td>{{reparacion.estado}}</td>
                   <td>
                     <i  [routerLink]="['/editarReparacion',reparacion.idReparacion]" class="fas fa-edit"></i>
+                    <i (click)="removeReparacion(reparacion.idReparacion)" class="fas fa-ban text-danger"></i>
                   </td>
                 </tr>
               </tbody>

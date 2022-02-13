@@ -7,10 +7,10 @@ import { EquipoSchema } from '../models/interfaces';
   providedIn: 'root',
 })
 export class FormulaOneService {
-  //private urlAPI = 'http://localhost:3000';
+  private urlAPI = 'http://localhost:3000';
 
   // Está subida a heroku:
-  private urlAPI = 'https://app-formulaone.herokuapp.com';
+  //private urlAPI = 'https://app-formulaone.herokuapp.com';
 
   constructor(private http: HttpClient) {}
 
@@ -65,6 +65,10 @@ export class FormulaOneService {
 
   eliminarRecambio(idPieza: string) : Observable<any> {
     return this.http.delete(this.urlAPI + '/recambio/' + idPieza, {responseType: 'text'});
+  }
+
+  eliminarReparacion(id: string) : Observable<any> {
+    return this.http.delete(this.urlAPI + '/reparacion/' + id, {responseType: 'text'});
   }
 
   editarEquipo(id: string , equipo: EquipoSchema) : Observable<any> {
