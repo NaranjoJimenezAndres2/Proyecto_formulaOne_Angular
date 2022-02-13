@@ -1,8 +1,8 @@
 const express = require('express')
 const app = express()
-app.use(express.static('./dist/formulaOne'));
+app.use(express.static('./dist/formula-one'));
 app.get('/*', function(req, res) {
- res.sendFile('index.html', {root: 'dist/formulaOne/'}
+ res.sendFile('index.html', {root: 'dist/formula-one/'}
  );
 });
 const port = 3500;
