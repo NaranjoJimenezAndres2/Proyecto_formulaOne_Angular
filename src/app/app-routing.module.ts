@@ -11,6 +11,7 @@ import { LoginComponent } from './componentes/login/login.component';
 import { DashboardComponent } from './componentes/dashboard/dashboard.component';
 import { EquipoDetallesComponent } from './componentes/equipo-detalles/equipo-detalles.component';
 import { RecambioComponent } from './componentes/recambio/recambio.component';
+import { ComparativaComponent } from './componentes/comparativa/comparativa.component';
 
 
 const appRoutes: Routes = [
@@ -19,10 +20,12 @@ const appRoutes: Routes = [
   { path: '', redirectTo: 'login' ,pathMatch: 'full'}, 
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', loadChildren: () => import('./componentes/dashboard/dashboard.module').then(m => m.DashboardModule) }, //carga perezosa, solo carga el modulo cuando se necesita
-
+  { path: 'home', component: HomeComponent },
   { path: 'editarEquipo/:idEscuderia', component: CrearEquipoComponent },
   { path: 'equipoDetalle/:idEscuderia', component: EquipoDetallesComponent },
   { path: 'recambios/:idEscuderia', component : RecambioComponent },
+  { path: 'comparativa/:idEscuderia', component : ComparativaComponent  },
+  
 
 
   //{ path: '**', redirectTo: 'login', pathMatch: 'full' }, //redirecciona a la ruta por defecto

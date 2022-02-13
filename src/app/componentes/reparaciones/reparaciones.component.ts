@@ -11,6 +11,12 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ReparacionesComponent implements OnInit {
   reparacionesForm: FormGroup;
+
+  estados = [
+    {estado:'En proceso'},
+    {estado: 'Finalizado'},
+    {estado:'Cancelado'} ,
+    {estado:'En espera'}];
   
   
   constructor(private fb: FormBuilder,
@@ -51,8 +57,10 @@ export class ReparacionesComponent implements OnInit {
       else if (x == "actualizado"){
         this.toastr.success('Reparacion enviada', 'Datos registrados')
       }
-      else {
-        this.toastr.info('Error desconocido', 'Fallo en el envio')
+      else if (x == "error"){
+        this.toastr.error('Error desconocido', 'Fallo en el envio')
+      } else {
+        this.toastr.info('Peticion No tramitada', 'Vuelva a intentarlo')
       }
 
     })

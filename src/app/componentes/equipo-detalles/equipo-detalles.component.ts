@@ -22,7 +22,7 @@ export class EquipoDetallesComponent implements OnInit {
   equipo: any;
   equipoDetalleObject: ClaseEquipoDetalle[] = [];
   equipoDetalle: any;
-  equipoMostrar: any;
+  equipoMostrar: any [] = [];
 
   /*****Tabla de Highchart**** */
 
@@ -35,13 +35,7 @@ export class EquipoDetallesComponent implements OnInit {
           enabled: true,
           alpha: 45
       },
-      backgroundColor: {
-        linearGradient: { x1: 0, y1: 0, x2: 1, y2: 1 },
-        stops: [
-          [0, '#2a2a2b'],
-          [1, '#3e3e40']
-        ]
-      }
+      backgroundColor: null
   },
   title: {
       text: 'Presupuesto disponible',
@@ -120,8 +114,8 @@ export class EquipoDetallesComponent implements OnInit {
 
   getDetalleEquipo2(){
     if (this.id !== null) {
-      this.formulaOneService.getSalarios(this.id).subscribe((data: any) => {
-        console.log("hemos conseguido pasar a la parte 2");
+      this.formulaOneService.getSalarios(this.id).subscribe((data: any) => { //los calculos vienen realizados en la API
+        console.log("funcion 2");
         this.salarioSchema = data.map((x: any) => {
           return {
             _idPersonal: x._idPersonal,
@@ -137,7 +131,7 @@ export class EquipoDetallesComponent implements OnInit {
           this.salarioCoste += element._salario;
         });
 
-        console.log(this.salarioCoste + "sorprendentemente se ha cargado");
+        console.log(this.salarioCoste + "carga del salario");
 
 
         this.equipoDetalle._salarioCoste = this.salarioCoste;
@@ -164,7 +158,7 @@ export class EquipoDetallesComponent implements OnInit {
         )
         this.equipo = this.EquipoObject;
 
-        console.log("llegamos a la parte 3")
+        console.log("llegamos funcion 3")
         console.log(this.equipo);
 
         console.log ("-----")
@@ -174,7 +168,6 @@ export class EquipoDetallesComponent implements OnInit {
         this.equipoDetalle._nombre = this.equipo[0]._nombre;
         this.equipoDetalle._presupuesto = this.equipo[0]._presupuesto;
 
-        console.log("aqui se esta embolando la cosa")
 
         console.log(this.equipoDetalle._nombre + " se ha cargado el nombre");
 
@@ -182,7 +175,7 @@ export class EquipoDetallesComponent implements OnInit {
           element.presupuestoFinal();
         });
 
-        this.equipoMostrar = this.equipoDetalleObject[0];
+        this.equipoMostrar.push(this.equipoDetalleObject[0]);
 
         console.log(this.equipoMostrar);
 
@@ -197,7 +190,7 @@ export class EquipoDetallesComponent implements OnInit {
         let arrayUno = [];
         arrayUno.push(dataSeriesNombre1);
         arrayUno.push(dataSeriesValor1[0]);
-        console.log(arrayUno);
+        //console.log(arrayUno);
         
 
         const dataSeriesValor2 = this.equipoDetalleObject.map(
@@ -209,7 +202,7 @@ export class EquipoDetallesComponent implements OnInit {
         let arrayDos = [];
         arrayDos.push(dataSeriesNombre2);
         arrayDos.push(dataSeriesValor2[0]);
-        console.log(arrayDos);
+        //console.log(arrayDos);
 
 
 
@@ -222,7 +215,7 @@ export class EquipoDetallesComponent implements OnInit {
         let arrayTres = [];
         arrayTres.push(dataSeriesNombre3);
         arrayTres.push(dataSeriesValor3[0]);
-        console.log(arrayTres);
+        //console.log(arrayTres);
 
         let arrayFinal = [];
         arrayFinal.push(arrayUno);

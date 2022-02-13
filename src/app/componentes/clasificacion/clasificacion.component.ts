@@ -27,13 +27,13 @@ export class ClasificacionComponent implements OnInit {
       type: 'bar',
     },
     title: {
-      text: 'Tabla Clasificacin Mundial F1 2021',
+      text: 'Tabla Clasificación Mundial F1 2021',
     },
     subtitle: {
-      text: 'Source: <a href="https://en.wikipedia.org/wiki/World_population">Wikipedia.org</a>',
+      text: 'Puntos Totales',
     },
     yAxis: {
-      tickInterval: 5,
+      tickInterval: 2,
       categories: [],
     },
     xAxis: {
@@ -47,7 +47,7 @@ export class ClasificacionComponent implements OnInit {
       },
     },
     tooltip: {
-      valueSuffix: ' millions',
+      valueSuffix: ' puntos',
     },
     plotOptions: {
       bar: {
@@ -80,6 +80,7 @@ export class ClasificacionComponent implements OnInit {
 
   getClasificacion() {
     this.formulaOneService.getPuntosApi().subscribe((clasificacion: any) => {
+      console.log(clasificacion);
 
 
       this.clasificacionObject = clasificacion.map((x: any) => 

@@ -16,7 +16,6 @@ export class ModReparacionComponent implements OnInit {
   reparacionesForm: FormGroup;
   rep:any;
   id: string | null;
-  reparacionesObject: ReparacionSchema[]=[];
   reparacionObject: ClaseReparaciones [] = [];
 
 
@@ -72,10 +71,16 @@ export class ModReparacionComponent implements OnInit {
        this.formulaOneService.editarReparacion(this.id, reparacion).subscribe(reparacion => {
          console.log(reparacion)
          console.log(this.id)
+         if (reparacion == "error") {
+          this.toastr.error('Error al editar reparacion', 'Error')
+          } else {
          this.toastr.info('Ticket editado', 'Informacion actualizada')
-         this.router.navigate(['/dashboard/listarReparaciones'])})
-       }
+         this.router.navigate(['/dashboard/listarReparaciones'])
+          }
+        })
       }
+       
+    }
 
 
 

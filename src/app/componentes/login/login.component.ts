@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
 
     if (usuario == 'admin' && password == 'admin') {
      //redireccion al dashboard 
-      this.fakeloading();
+      this.fakeloading();  //simulacion de carga
 
     }else{
       //mensaje de error
@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit {
   fakeloading(){
     this.loading = true;
     setTimeout(() => {
-      this.router.navigate(['dashboard']);
+      this.router.navigate(['home']);
     }, 2000);
   }
 

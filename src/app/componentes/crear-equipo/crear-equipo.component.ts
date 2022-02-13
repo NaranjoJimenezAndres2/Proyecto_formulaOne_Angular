@@ -77,11 +77,15 @@ export class CrearEquipoComponent implements OnInit {
       console.log(parse);
       let equipoLimpio = JSON.parse(parse);
       console.log("hola")
-      this.formulaOneService.crearEquipo(equipoLimpio).subscribe(() => {
-        console.log("adios")
+      this.formulaOneService.crearEquipo(equipoLimpio).subscribe((mensaje:any) => {
+        console.log(mensaje)
+        if (mensaje == "error") {
+          this.toastr.error('Error al crear el equipo', 'Error');
+        } else {
         this.equiposForm.reset();
         this.equiposForm.markAsUntouched();
         this.toastr.success('Equipo creado', 'Equipo creado');
+        }
 
         this.router.navigate(['/dashboard/equipos']);
       })

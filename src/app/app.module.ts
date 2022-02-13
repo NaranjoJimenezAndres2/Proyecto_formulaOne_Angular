@@ -22,6 +22,11 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EquipoDetallesComponent } from './componentes/equipo-detalles/equipo-detalles.component';
+import { MostrarPersonalComponent } from './componentes/mostrar-personal/mostrar-personal.component';
+import { ComparativaComponent } from './componentes/comparativa/comparativa.component';
+
+
+
 
 
 
@@ -39,6 +44,10 @@ import { EquipoDetallesComponent } from './componentes/equipo-detalles/equipo-de
     HomeComponent,
     LoginComponent,
     EquipoDetallesComponent,
+    MostrarPersonalComponent,
+    ComparativaComponent,
+
+
 
   ],
   imports: [
@@ -48,6 +57,9 @@ import { EquipoDetallesComponent } from './componentes/equipo-detalles/equipo-de
     BrowserModule,
     SharedModule,
     BrowserAnimationsModule,
+    
+
+
 
   ],
   providers: [
