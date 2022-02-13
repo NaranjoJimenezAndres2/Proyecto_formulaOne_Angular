@@ -10,7 +10,7 @@ export class FormulaOneService {
   //private urlAPI = 'http://localhost:3000';
 
   // Está subida a heroku:
-  private urlAPI = 'https://app-formulaone.herokuapp.com/';
+  private urlAPI = 'https://app-formulaone.herokuapp.com';
 
   constructor(private http: HttpClient) {}
 
